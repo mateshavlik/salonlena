@@ -1713,6 +1713,39 @@ section[id],
     margin-top: var(--space-md);
   }
 
+  /* --- O SALONU: fotka majitelky bez ořezu + kompaktní citát přes fotku --- */
+  #o-salonu .split__visual--quote {
+    position: relative;
+  }
+
+  #o-salonu .split__img-wrap {
+    width: min(380px, 100%);
+    margin-inline: auto;   /* na tabletu vycentruje, na mobilu plná šířka */
+  }
+
+  #o-salonu .split__img {
+    height: auto;
+    aspect-ratio: 3 / 4;   /* přesný poměr fotky → žádný ořez */
+  }
+
+  #o-salonu .quote-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 14px;
+    width: min(352px, calc(100% - 28px));  /* zarovnané s fotkou, ~14px odsazení */
+    max-width: none;
+    margin-top: 0;
+    padding: 14px 16px;
+    background: rgba(44, 26, 14, .82);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+
+  #o-salonu .quote-card__mark { width: 24px; height: 24px; margin-bottom: 4px; }
+  #o-salonu .quote-card p    { font-size: 14px; line-height: 1.45; margin-bottom: 6px; }
+  #o-salonu .quote-card cite { font-size: 11.5px; }
+
   .hero__stats { flex-wrap: wrap; gap: var(--space-md); }
   .hero__actions { flex-direction: column; align-items: flex-start; }
 
@@ -1739,14 +1772,14 @@ section[id],
   .gallery       { grid-template-columns: repeat(2, 1fr); }
   .footer__inner { grid-template-columns: 1fr; gap: var(--space-lg); }
 
-  .photo-strip { height: 160px; }
-  .photo-strip img { width: 50%; }
+  .photo-strip { height: 150px; }
+  .photo-strip img { width: 33.333%; }
   .photo-strip img:nth-child(n+4) { display: none; }
 
   .header__actions .btn--primary { display: none; }
 
-  .faq-item__q { padding: var(--space-md); font-size: 16px; }
-  .faq-item__a { padding: 0 var(--space-md) var(--space-md); }
+  .faq-item__q { padding: 11px 14px; font-size: 14px; }
+  .faq-item__a { padding: 2px 14px 12px; }
 
   .cta-band__actions { flex-direction: column; align-items: center; }
 
