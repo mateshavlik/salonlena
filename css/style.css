@@ -1787,6 +1787,32 @@ section[id],
     object-position: center 30%;
   }
 
+  /* Silnější ztmavení fotky + stín textu → čitelné nápisy v hero */
+  .hero__overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(44,26,14,.30) 0%,
+      rgba(44,26,14,.58) 45%,
+      rgba(44,26,14,.92) 100%
+    );
+  }
+  .hero__copy .eyebrow,
+  .hero__lead,
+  .hero__stat strong,
+  .hero__stat span {
+    text-shadow: 0 1px 10px rgba(0,0,0,.55);
+  }
+
+  /* Pruh se statistikami: rovnoměrný 3sloupcový grid místo rozházeného wrapu */
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+  .hero__stat strong { font-size: 24px; }
+  .hero__stat span   { font-size: 10.5px; }
+
   .faq-item__q { padding: 11px 14px; font-size: 14px; }
   .faq-item__a { padding: 2px 14px 12px; }
 
