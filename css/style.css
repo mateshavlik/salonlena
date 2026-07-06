@@ -1778,6 +1778,15 @@ section[id],
 
   .header__actions .btn--primary { display: none; }
 
+  /* HERO na výšku: jen jedna fotka přes celou šířku, žádný blur/šev */
+  .hero__bg-img--right { display: none; }
+  .hero__bg-img--left {
+    width: 100%;
+    -webkit-mask-image: none;
+    mask-image: none;
+    object-position: center 30%;
+  }
+
   .faq-item__q { padding: 11px 14px; font-size: 14px; }
   .faq-item__a { padding: 2px 14px 12px; }
 
