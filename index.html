@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon Lena — Profesionální úprava psů v České Lípě</title>
+  <meta name="description" content="Salon Lena v České Lípě — profesionální úprava psů, koček a drobných zvířat od roku 2015. Více než 20 odborných certifikátů, individuální přístup, péče o zdraví srsti.">
+  <meta name="keywords" content="psí salon česká lípa, úprava psů česká lípa, stříhání psů, grooming česká lípa, salon lena">
+  <meta property="og:title" content="Salon Lena — Profesionální úprava psů v České Lípě">
+  <meta property="og:description" content="Profesionální úprava psů s více než 20 certifikáty. Salon v areálu veterinární ordinace od roku 2015.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+  ======================================================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#uvod" class="header__logo" aria-label="Salon Lena — úvod">
+        <svg class="header__paw" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <ellipse cx="13" cy="9"  rx="4.5" ry="5.5"/>
+          <ellipse cx="27" cy="9"  rx="4.5" ry="5.5"/>
+          <ellipse cx="6"  cy="20" rx="3.5" ry="4.5"/>
+          <ellipse cx="34" cy="20" rx="3.5" ry="4.5"/>
+          <path d="M20 15c6 0 12 5.5 12 12 0 4.5-3.5 7.5-8 7.5-1.5 0-2.5-.5-4-.5s-2.5.5-4 .5c-4.5 0-8-3-8-7.5 0-6.5 6-12 12-12z"/>
+        </svg>
+        <span class="header__name">Salon <em>Lena</em></span>
+      </a>
+
+      <nav class="header__nav" id="main-nav" aria-label="Hlavní navigace">
+        <a href="#o-salonu">O salonu</a>
+        <a href="#sluzby">Služby</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#certifikaty">Certifikáty</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+420603544335" class="btn btn--ghost header__tel">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 11.9a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>603 544 335</span>
+        </a>
+        <button class="btn btn--primary" data-open-modal aria-haspopup="dialog">Objednat se</button>
+        <button class="header__hamburger" id="hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================================================
+         HERO — dva pejsci vedle sebe
+    ======================================================= -->
+    <section class="hero" id="uvod" aria-labelledby="hero-heading">
+      <div class="hero__bg">
+        <img src="img/hero-1.jpg" alt="" class="hero__bg-img hero__bg-img--left" fetchpriority="high" aria-hidden="true">
+        <img src="img/hero-2.jpg" alt="" class="hero__bg-img hero__bg-img--right" fetchpriority="high" aria-hidden="true">
+        <div class="hero__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow">Česká Lípa · od roku 2015</p>
+          <h1 id="hero-heading">V našem salonu nejde<br>jen o&nbsp;krásu.</h1>
+          <p class="hero__lead">
+            Jde především o&nbsp;zdraví, důvěru a&nbsp;vztah mezi člověkem a&nbsp;jeho mazlíčkem.
+          </p>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <strong>2015</strong>
+              <span>Rok otevření</span>
+            </div>
+            <div class="hero__stat">
+              <strong>20+</strong>
+              <span>Odborných certifikátů</span>
+            </div>
+            <div class="hero__stat">
+              <strong>100%</strong>
+              <span>Individuální přístup</span>
+            </div>
+          </div>
+          <div class="hero__actions">
+            <button class="btn btn--primary btn--lg" data-open-modal>Objednat se</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ======================================================
+         O SALONU
+    ======================================================= -->
+    <section class="section" id="o-salonu" aria-labelledby="o-salonu-heading">
+      <div class="container">
+        <div class="split">
+          <div class="split__visual split__visual--quote" data-reveal>
+            <div class="split__img-wrap">
+              <img src="img/owner.jpg" alt="Lena, majitelka salonu, před stěnou s certifikáty" class="split__img" loading="lazy">
+            </div>
+            <div class="quote-card" aria-label="Citát majitelky">
+              <svg class="quote-card__mark" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V18C0 8 6 2 18 0l2 4C12 6 9 10 9 16h7v14H0zm22 0V18c0-10 6-16 18-18l2 4c-8 2-11 6-11 12h7v14H22z" fill="currentColor" opacity=".2"/></svg>
+              <p>"Dělám to, co mám ráda.<br>Miluju to, co dělám."</p>
+              <cite>— Lena, majitelka salonu</cite>
+            </div>
+          </div>
+
+          <div class="split__copy" data-reveal>
+            <p class="eyebrow">O salonu</p>
+            <h2 id="o-salonu-heading">Salon, kde vaše zvíře dostane péči, jakou si zaslouží</h2>
+            <p>
+              Salon Lena funguje v České Lípě od roku <strong>2015</strong> a&nbsp;sídlí v&nbsp;prostorách
+              veterinární ordinace Dolní Libchava. Díky této jedinečné spolupráci s&nbsp;veterinářem
+              nabízím komplexní péči, která jde nad rámec běžného psího salonu.
+            </p>
+            <p>
+              Každému pejskovi věnuji čas, trpělivost a&nbsp;individuální přístup.
+              Díky dlouholetým zkušenostem a&nbsp;neustálému vzdělávání dokáži zvolit správný postup
+              péče přesně podle potřeb vašeho psa.
+            </p>
+            <p>
+              Kladu důraz nejen na krásný vzhled, ale především na <strong>zdraví srsti</strong>.
+              Pravidelná úprava je prevencí — pomáhá předcházet kožním problémům, parazitům
+              i&nbsp;zbytečnému diskomfortu vašeho mazlíčka.
+            </p>
+            <ul class="check-list">
+              <li>Více než 20 odborných certifikátů na různá plemena a&nbsp;střihy</li>
+              <li>Salon v&nbsp;areálu veterinární ordinace</li>
+              <li>Neustálé vzdělávání a&nbsp;sledování nových trendů</li>
+              <li>Péče zaměřená na zdraví srsti, nejen na vzhled</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         PROČ SALON LENA
+    ======================================================= -->
+    <section class="section section--cream" id="proc-my" aria-labelledby="proc-my-heading">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Proč si vybrat Salon Lena</p>
+          <h2 id="proc-my-heading">Péče, na kterou se můžete spolehnout</h2>
+        </div>
+
+        <div class="features" role="list">
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <h3>20+ certifikátů</h3>
+            <p>Odborné vzdělání pro různá plemena a&nbsp;typy střihů zaručuje profesionální výsledek.</p>
+          </div>
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Zázemí veterinární ordinace</h3>
+            <p>Salon přímo v&nbsp;areálu veterinárního zázemí — bezpečí i&nbsp;komplexní péče na jednom místě.</p>
+          </div>
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Individuální přístup</h3>
+            <p>Každý pejsek je jiný. Práci přizpůsobuji jeho povaze, potřebám a&nbsp;stavu srsti.</p>
+          </div>
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4.5 8-11.5A5.5 5.5 0 0 0 12 6a5.5 5.5 0 0 0-8 4.5C4 17.5 12 22 12 22z"/></svg>
+            </div>
+            <h3>Profesionální kosmetika</h3>
+            <p>Používám značkové přípravky Iv San Bernard, True Iconic a&nbsp;Youpe, včetně hypoalergenních řad.</p>
+          </div>
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Dlouholeté zkušenosti</h3>
+            <p>Od roku 2015 jsem upravila tisíce pejsků. Zkušenost poznáte hned při první návštěvě.</p>
+          </div>
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Moderní vybavení</h3>
+            <p>Pracuji s&nbsp;profesionálními nástroji a&nbsp;vybavením, na které se lze spolehnout.</p>
+          </div>
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Zdraví srsti na prvním místě</h3>
+            <p>Pravidelná úprava je prevencí — chráníme pokožku, srst i&nbsp;celkovou pohodu vašeho psa.</p>
+          </div>
+          <div class="feature" role="listitem" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h3>Pravidelné vzdělávání</h3>
+            <p>Sleduji trendy, absolvuji kurzy a&nbsp;certifikace — aby vaši pejsci dostali vždy to nejlepší.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         FOTOPRUH — salon
+    ======================================================= -->
+    <div class="photo-strip" aria-label="Fotografie salonu">
+      <img src="img/salon/salon-full.webp" alt="Interiér salonu Lena" loading="lazy">
+      <img src="img/salon/salon-2.webp" alt="Pracovní prostor salonu" loading="lazy">
+      <img src="img/salon/waiting-room.webp" alt="Čekárna salonu" loading="lazy">
+      <img src="img/salon/salon-3.webp" alt="Prostředí salonu" loading="lazy">
+      <img src="img/salon/entrance.webp" alt="Vstup do areálu" loading="lazy">
+    </div>
+
+    <!-- ======================================================
+         SLUŽBY + DŮLEŽITÉ INFORMACE
+    ======================================================= -->
+    <section class="section" id="sluzby" aria-labelledby="sluzby-heading">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Nabídka služeb</p>
+          <h2 id="sluzby-heading">Co pro vašeho mazlíčka uděláme</h2>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card service-card--1" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Stříhání psů</h3>
+            <p>Kompletní úprava střihu dle plemene a&nbsp;přání majitele — hlava, tělo, tlapky.</p>
+          </article>
+
+          <article class="service-card service-card--2" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2a2.5 2.5 0 0 1 5 0v.5a2.5 2.5 0 0 1-5 0V2zM4 7h16l-2 13H6L4 7z"/></svg>
+            </div>
+            <h3>Trimování</h3>
+            <p>Ruční úprava srsti pro drátkosrsté nebo tvrdosrsté plemena — zachovává texturu srsti.</p>
+          </article>
+
+          <article class="service-card service-card--3" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg>
+            </div>
+            <h3>Koupání psů</h3>
+            <p>Šetrné koupání s&nbsp;profesionální kosmetikou a&nbsp;důkladné vyfoukání i&nbsp;pro velká plemena.</p>
+          </article>
+
+          <article class="service-card service-card--4" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v2a8 8 0 0 1-16 0V4z"/><line x1="12" y1="6" x2="12" y2="20"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+            </div>
+            <h3>Vyčesávání psů</h3>
+            <p>Důkladné rozčesání srsti a&nbsp;šetrné odstranění uzlíků. Ideální příprava před stříháním.</p>
+          </article>
+
+          <article class="service-card service-card--1" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L8 6H4l2 4-3 3 4 1 1 4 4-3 4 3 1-4 4-1-3-3 2-4h-4L12 2z"/></svg>
+            </div>
+            <h3>Vyčesávání koček</h3>
+            <p>Citlivá úprava srsti pro kočky s&nbsp;ohledem na jejich specifickou povahu a&nbsp;potřeby.</p>
+          </article>
+
+          <article class="service-card service-card--2" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 16.5c.5.5 2.5 1.5 5 1.5s4.5-1 5-1.5"/><path d="M12 2c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg>
+            </div>
+            <h3>Koupání koček</h3>
+            <p>Bezstresové koupání koček ve zklidňujícím prostředí salonu.</p>
+          </article>
+
+          <article class="service-card service-card--3" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Vyčesávání línající srsti</h3>
+            <p>Odstranění nadměrné podsady — méně chlupů doma, zdravější a&nbsp;vzdušnější srst pejska.</p>
+          </article>
+
+          <article class="service-card service-card--highlight service-card--4" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </div>
+            <h3>Stříhání drápků</h3>
+            <p>Bezobjednávkově! Stačí zazvonet nebo zaklepat — ihned obsloužíme.</p>
+            <span class="service-badge">Bez objednání</span>
+          </article>
+
+          <article class="service-card service-card--1" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Čištění análních žlázek</h3>
+            <p>Hygienické ošetření jako součást komplexní návštěvy nebo samostatně.</p>
+          </article>
+
+          <article class="service-card service-card--2" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3>Ošetření uší</h3>
+            <p>Šetrné čištění uší a&nbsp;kontrola ušních žlázek jako prevence problémů.</p>
+          </article>
+
+        </div>
+
+        <p class="services-note" data-reveal>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <strong>Stříhání drápků bez objednání.</strong> Stačí zazvonit nebo zaklepat na dveře salonu.
+        </p>
+
+        <!-- Důležité informace — součást sekce Služby -->
+        <div class="info-section" data-reveal>
+          <h3 class="info-section__title">Důležité informace před návštěvou</h3>
+          <p class="info-section__sub">Prosím přečtěte si tato upozornění — pomáhají chránit zdraví všech svěřených mazlíčků.</p>
+          <div class="info-boxes">
+            <div class="info-box info-box--warn">
+              <div class="info-box__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div>
+                <h4>Silně zadredovaná srst</h4>
+                <p>Silně zadredované psy nerozčesávám — bylo by to bolestivé. Rozčesuji pouze lokální zacuchání.</p>
+              </div>
+            </div>
+            <div class="info-box info-box--warn">
+              <div class="info-box__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div>
+                <h4>Blechy a hygienické problémy</h4>
+                <p>Vyhrazuji si právo odmítnout silně zablešeného psa nebo psa se silně zanedbanou srstí — z&nbsp;důvodu ochrany ostatních zvířat.</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div>
+                <h4>Holení hustých plemen</h4>
+                <p>Psy s&nbsp;hustou podsadou na přání neholím — holení může nevratně poškodit srst a&nbsp;termoregulaci psa.</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div>
+                <h4>Příplatek za asistenci</h4>
+                <p>U&nbsp;velmi náročných úprav nebo neposlušných psů může být účtován příplatek za pomoc další osoby.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         CENÍK
+    ======================================================= -->
+    <section class="section section--cream" id="cenik" aria-labelledby="cenik-heading">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Ceník</p>
+          <h2 id="cenik-heading">Orientační ceny</h2>
+          <p class="section__lead">Ceny se liší dle délky a&nbsp;stavu srsti. Finální cena vám bude sdělena při objednání.</p>
+        </div>
+
+        <div class="pricing-grid" data-reveal>
+          <div class="pricing-col">
+            <h3 class="pricing-col__title">Kompletní úprava</h3>
+            <ul class="price-list">
+              <li class="price-item"><span class="price-item__name">Jorkšírský teriér</span><span class="price-item__price">od 750 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Maltézský psík</span><span class="price-item__price">od 750 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Bišonek</span><span class="price-item__price">800–1000 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">West Highland White Terrier</span><span class="price-item__price">800–1000 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Boloňský psík</span><span class="price-item__price">800–1000 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Oříšek</span><span class="price-item__price">od 750 Kč dle vel.</span></li>
+              <li class="price-item"><span class="price-item__name">Pomeranian</span><span class="price-item__price">800–1000 Kč</span></li>
+            </ul>
+          </div>
+          <div class="pricing-col">
+            <h3 class="pricing-col__title">Další služby</h3>
+            <ul class="price-list">
+              <li class="price-item"><span class="price-item__name">Vyčesávání velkých plemen</span><span class="price-item__price">od 700 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Kompletní úprava velkých plemen</span><span class="price-item__price">od 700 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Koupání malých plemen</span><span class="price-item__price">400–550 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Koupání středních plemen</span><span class="price-item__price">550–700 Kč</span></li>
+              <li class="price-item"><span class="price-item__name">Trimování</span><span class="price-item__price">od 600 Kč</span></li>
+              <li class="price-item price-item--note"><span class="price-item__name">Rozčesávání dredů — příplatek</span><span class="price-item__price">+ 100 Kč</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pricing-note" data-reveal>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Uvedené ceny jsou orientační pro nejčastější plemena. Pokud jste své plemeno nenašli, kontaktujte mě telefonicky — ráda poradím.
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         FOTOPRUH — mazlíčci
+    ======================================================= -->
+    <div class="photo-strip" aria-label="Fotografie mazlíčků">
+      <img src="img/dogs/dog-28.webp" alt="Upravený pejsek — Salon Lena" loading="lazy">
+      <img src="img/dogs/dog-29.webp" alt="Pejsek po stříhání — Salon Lena" loading="lazy">
+      <img src="img/dogs/dog-30.webp" alt="Spokojený pejsek — Salon Lena" loading="lazy">
+      <img src="img/dogs/dog-31.webp" alt="Pejsek po úpravě — Salon Lena" loading="lazy">
+      <img src="img/dogs/dog-32.webp" alt="Pes po koupání — Salon Lena" loading="lazy">
+    </div>
+
+    <!-- ======================================================
+         KOSMETIKA
+    ======================================================= -->
+    <section class="section section--brown" id="kosmetika" aria-labelledby="kosmetika-heading">
+      <div class="container">
+        <div class="kosmetika-inner">
+          <div class="kosmetika-copy" data-reveal>
+            <p class="eyebrow" style="color:var(--gold-light)">Profesionální kosmetika</p>
+            <h2 id="kosmetika-heading" class="kosmetika-heading">Jen to nejlepší pro srst vašeho pejska</h2>
+            <p class="kosmetika-text">
+              Pracuji výhradně s&nbsp;prověřenými profesionálními značkami, které jsou šetrné ke srsti
+              i&nbsp;pokožce a&nbsp;přinášejí vynikající výsledky. U&nbsp;citlivých pejsků používám
+              hypoalergenní kosmetiku a&nbsp;šampony speciálně určené pro citlivou pokožku.
+            </p>
+            <p class="kosmetika-text">
+              Profesionální kosmetika je i&nbsp;k&nbsp;zakoupení v&nbsp;salonu včetně pomůcek.
+            </p>
+            <div class="brands">
+              <div class="brand-badge">Iv San Bernard</div>
+              <div class="brand-badge">True Iconic</div>
+              <div class="brand-badge">Youpe</div>
+            </div>
+          </div>
+          <div class="kosmetika-img-wrap" data-reveal aria-hidden="true">
+            <img
+              src="img/salon/cosmetics.webp"
+              alt="Profesionální kosmetika pro psy v Salon Lena"
+              loading="lazy"
+              class="kosmetika-img"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         GALERIE s filtry
+    ======================================================= -->
+    <section class="section" id="galerie" aria-labelledby="galerie-heading">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Galerie</p>
+          <h2 id="galerie-heading">Naši mazlíčci</h2>
+        </div>
+
+        <div class="gallery" id="gallery" role="list">
+          <button class="gallery__item" data-src="img/dogs/dog-02.webp" data-alt="Upravený pejsek — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto: Pejsek po úpravě">
+            <img src="img/dogs/dog-02.webp" alt="Upravený pejsek" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-03.webp" data-alt="Pejsek po stříhání — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto: Pejsek po stříhání">
+            <img src="img/dogs/dog-03.webp" alt="Pejsek po stříhání" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-04.webp" data-alt="Pejsek po úpravě srsti — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto: Pejsek po úpravě srsti">
+            <img src="img/dogs/dog-04.webp" alt="Pejsek po úpravě srsti" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-05.webp" data-alt="Spokojený pejsek ze salonu" data-category="dogs" role="listitem" aria-label="Zobrazit foto: Spokojený pejsek">
+            <img src="img/dogs/dog-05.webp" alt="Spokojený pejsek ze salonu" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-06.webp" data-alt="Pes po koupání a úpravě — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto: Pes po koupání">
+            <img src="img/dogs/dog-06.webp" alt="Pes po koupání a úpravě" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-07.webp" data-alt="Pejsek v salonu Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto: Pejsek v salonu">
+            <img src="img/dogs/dog-07.webp" alt="Pejsek v salonu Lena" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-08.webp" data-alt="Malé plemeno po úpravě — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto: Malé plemeno">
+            <img src="img/dogs/dog-08.webp" alt="Malé plemeno po úpravě" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-09.webp" data-alt="Pes připravený na výstavu — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-09.webp" alt="Pes po grooming úpravě" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-10.webp" data-alt="Upravený pejsek — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-10.webp" alt="Upravený pejsek" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-11.webp" data-alt="Pejsek po stříhání — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-11.webp" alt="Pejsek po stříhání" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-12.webp" data-alt="Pes po komplexní péči — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-12.webp" alt="Pes po komplexní péči" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-13.webp" data-alt="Pejsek po koupání — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-13.webp" alt="Pejsek po koupání" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-15.webp" data-alt="Pejsek ze salonu Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-15.webp" alt="Pejsek ze salonu Lena" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-16.webp" data-alt="Upravený pejsek — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-16.webp" alt="Upravený pejsek" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-18.webp" data-alt="Pes po úpravě srsti — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-18.webp" alt="Pes po úpravě srsti" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-21.webp" data-alt="Pejsek v salonu — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-21.webp" alt="Pejsek v salonu" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-22.webp" data-alt="Spokojený pejsek — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-22.webp" alt="Spokojený pejsek" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-24.webp" data-alt="Pes po stříhání — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-24.webp" alt="Pes po stříhání" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-25.webp" data-alt="Upravený pejsek — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-25.webp" alt="Upravený pejsek" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-27.webp" data-alt="Pejsek po grooming úpravě — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-27.webp" alt="Pejsek po grooming úpravě" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-33.webp" data-alt="Upravený pejsek — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-33.webp" alt="Upravený pejsek" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-35.webp" data-alt="Pejsek po stříhání — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-35.webp" alt="Pejsek po stříhání" loading="lazy">
+          </button>
+          <button class="gallery__item" data-src="img/dogs/dog-36.webp" data-alt="Pes po úpravě srsti — Salon Lena" data-category="dogs" role="listitem" aria-label="Zobrazit foto">
+            <img src="img/dogs/dog-36.webp" alt="Pes po úpravě srsti" loading="lazy">
+          </button>
+        </div>
+
+        <div class="gallery__more" data-reveal>
+          <a href="https://instagram.com/_salonlena_" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+            Více fotek na Instagramu @_salonlena_
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         CERTIFIKÁTY
+    ======================================================= -->
+    <section class="section section--cream" id="certifikaty" aria-labelledby="certs-heading">
+      <div class="container">
+        <div class="split">
+          <div class="split__copy" data-reveal>
+            <p class="eyebrow">Odbornost & vzdělání</p>
+            <h2 id="certs-heading">Více než 20 odborných certifikátů</h2>
+            <p>
+              Vzdělání a&nbsp;odbornost jsou pro mě základem dobré práce. Od otevření salonu v&nbsp;roce 2015
+              jsem absolvovala řadu kurzů a&nbsp;certifikací zaměřených na různá plemena, typy střihů
+              a&nbsp;moderní grooming techniky.
+            </p>
+            <p>
+              Pravidelně se účastním dalšího vzdělávání — grooming trendy se vyvíjejí a&nbsp;já chci mít
+              vždy aktuální znalosti. Váš pejsek je v&nbsp;rukou profesionála, který oboru rozumí do hloubky.
+            </p>
+            <div class="cert-stats">
+              <div class="cert-stat">
+                <strong>20+</strong>
+                <span>Certifikátů</span>
+              </div>
+              <div class="cert-stat">
+                <strong>10+</strong>
+                <span>Let v oboru</span>
+              </div>
+              <div class="cert-stat">
+                <strong>2015</strong>
+                <span>Rok otevření</span>
+              </div>
+            </div>
+          </div>
+          <div class="split__visual cert-gallery" data-reveal>
+            <img src="img/certs/cert-wall.webp" alt="Stěna s odbornými certifikáty v Salon Lena" class="split__img" loading="lazy">
+            <img src="img/certs/cert-1.webp" alt="Odborný certifikát Salon Lena" class="cert-gallery__small" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         FAQ — kompaktní řádkový styl
+    ======================================================= -->
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="container faq-wrap">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-heading">Časté otázky</h2>
+        </div>
+        <div class="faq-list" role="list">
+          <div class="faq-item" data-reveal role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              <span>Proč je pejsek při čekání v ohrádce?</span>
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" hidden>
+              <p>Salon je propojen s&nbsp;veterinární ordinací a&nbsp;proto není bezpečné, aby se psi volně pohybovali po společných prostorách. Ohrádka je pro pejska nejbezpečnějším místem, kde může klidně počkat pod dohledem.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              <span>Proč je pejsek při stříhání připoután?</span>
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" hidden>
+              <p>Bezpečnostní pás slouží výhradně k&nbsp;ochraně psa před pádem ze stolu a&nbsp;případným úrazem — nikoliv k&nbsp;omezení pohybu silou.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              <span>Co když má můj pes alergii?</span>
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" hidden>
+              <p>Prosím, upozorněte mě na alergii vždy předem — při objednání nebo nejpozději při příchodu. Pro citlivé pejsky používám hypoalergenní kosmetiku a&nbsp;šampony pro citlivou pokožku.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              <span>Jak se objednám?</span>
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" hidden>
+              <p>Objednání probíhá telefonicky, přes SMS nebo osobně. Volejte na <a href="tel:+420603544335">603 544 335</a> nebo nás navštivte přímo v salonu.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              <span>Jak dlouho trvá úprava?</span>
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" hidden>
+              <p>Záleží na plemeni, velikosti a&nbsp;stavu srsti. Drobná plemena zpravidla 1,5–2 hodiny, větší úpravy mohou trvat déle. Přesný čas sdělím při objednání.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         CTA PÁSEK — fotka zachována
+    ======================================================= -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="cta-band__bg">
+        <img src="img/salon/window-ext.webp" alt="" aria-hidden="true" loading="lazy" class="cta-band__img">
+        <div class="cta-band__overlay"></div>
+      </div>
+      <div class="container cta-band__inner">
+        <div data-reveal>
+          <p class="eyebrow" style="color:var(--gold-light)">Objednejte svého mazlíčka</p>
+          <h2 id="cta-heading">Jsme tu pro vás i&nbsp;pro vaše mazlíčky</h2>
+          <p>Zavolejte, napište SMS nebo přijďte osobně — rádi si najdeme termín.</p>
+          <div class="cta-band__actions">
+            <button class="btn btn--primary btn--lg" data-open-modal>Objednat se</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         KONTAKT
+    ======================================================= -->
+    <section class="section section--cream" id="kontakt" aria-labelledby="kontakt-heading">
+      <div class="container">
+        <div class="split split--reverse">
+          <div class="split__copy" data-reveal>
+            <p class="eyebrow">Kontakt</p>
+            <h2 id="kontakt-heading">Kde nás najdete</h2>
+            <ul class="contact-list" role="list">
+              <li class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <strong>Adresa</strong>
+                  <address>Děčínská 3326<br>(v prostorách veterinární ordinace)<br>471 01 Česká Lípa</address>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 11.9 19.79 19.79 0 0 1 1.02 3.27 2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <strong>Telefon</strong>
+                  <a href="tel:+420603544335">603 544 335</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+                </div>
+                <div>
+                  <strong>Instagram</strong>
+                  <a href="https://instagram.com/_salonlena_" target="_blank" rel="noopener noreferrer">@_salonlena_</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <strong>Provozní doba</strong>
+                  <span>Pouze na objednání</span>
+                  <span class="contact-note">Objednání: telefonicky · SMS · osobně</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="split__visual" data-reveal>
+            <div class="map-wrap">
+              <iframe title="Mapa — Salon Lena, Děčínská 3326, Česká Lípa" src="https://www.google.com/maps?q=Děčínská+3326,+471+01+Česká+Lípa&output=embed" width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <div class="contact-photo-grid">
+              <img src="img/salon/salon-2.webp" alt="Salon Lena interiér" loading="lazy">
+              <img src="img/salon/waiting-room.webp" alt="Čekárna salonu" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="header__name footer__logo-name">Salon <em>Lena</em></div>
+        <p>Profesionální úprava psů, koček a&nbsp;drobných zvířat v&nbsp;České Lípě od roku 2015.</p>
+        <a href="https://instagram.com/_salonlena_" target="_blank" rel="noopener noreferrer" class="footer__ig" aria-label="Instagram Salon Lena">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          @_salonlena_
+        </a>
+      </div>
+      <nav class="footer__nav" aria-label="Patičková navigace">
+        <h3>Navigace</h3>
+        <a href="#o-salonu">O salonu</a>
+        <a href="#sluzby">Služby</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#certifikaty">Certifikáty</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="footer__contact">
+        <h3>Kontakt</h3>
+        <a href="tel:+420603544335">603 544 335</a>
+        <address>Děčínská 3326<br>471 01 Česká Lípa</address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© <span id="year"></span> Salon Lena. Všechna práva vyhrazena.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       MODAL OBJEDNÁNÍ (bez emailu)
+  ======================================================= -->
+  <div class="modal" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close-modal aria-label="Zavřít okno">&times;</button>
+      <div class="modal__icon" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="40" height="40" fill="var(--brown-warm)"><ellipse cx="13" cy="9" rx="4.5" ry="5.5"/><ellipse cx="27" cy="9" rx="4.5" ry="5.5"/><ellipse cx="6" cy="20" rx="3.5" ry="4.5"/><ellipse cx="34" cy="20" rx="3.5" ry="4.5"/><path d="M20 15c6 0 12 5.5 12 12 0 4.5-3.5 7.5-8 7.5-1.5 0-2.5-.5-4-.5s-2.5.5-4 .5c-4.5 0-8-3-8-7.5 0-6.5 6-12 12-12z"/></svg>
+      </div>
+      <h2 id="modal-title">Objednejte svého mazlíčka</h2>
+      <p>Vyberte si způsob, který vám nejvíce vyhovuje:</p>
+      <div class="modal__options">
+        <a href="tel:+420603544335" class="modal__option">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 11.9 19.79 19.79 0 0 1 1.02 3.27 2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><strong>Zavolat</strong><span>603 544 335</span></div>
+        </a>
+        <a href="sms:+420603544335" class="modal__option">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <div><strong>SMS</strong><span>603 544 335</span></div>
+        </a>
+        <a href="https://instagram.com/_salonlena_" target="_blank" rel="noopener noreferrer" class="modal__option">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div><strong>Instagram</strong><span>@_salonlena_</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       LIGHTBOX s kategoriemi
+  ======================================================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galerie fotografií" aria-hidden="true">
+    <button class="lightbox__close" id="lb-close" aria-label="Zavřít">&times;</button>
+    <button class="lightbox__prev" id="lb-prev" aria-label="Předchozí fotografie">&#8592;</button>
+    <button class="lightbox__next" id="lb-next" aria-label="Následující fotografie">&#8594;</button>
+    <div class="lightbox__img-wrap">
+      <img src="" alt="" id="lb-img" class="lightbox__img">
+    </div>
+    <div class="lightbox__counter" id="lb-counter" aria-live="polite"></div>
+    <div class="lightbox__overlay" id="lb-overlay"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

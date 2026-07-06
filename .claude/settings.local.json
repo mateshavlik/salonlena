@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:salon-lena.websnadno.cz)",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Mates\\\\Desktop\\\\Salon Lena'\")",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(python --version)",
+      "PowerShell(py --version 2>$null)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Mates\\\\Desktop\\\\Salon Lena\\\\img\" -Recurse | Where-Object {!$_.PSIsContainer} | Select-Object FullName, Length | Format-Table -AutoSize)"
+    ]
+  }
+}

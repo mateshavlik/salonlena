@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webový vzorkovník — 24 ukázek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',system-ui,sans-serif; background:#E5E7EB; color:#111827; padding:36px 22px 80px; line-height:1.5; }
+
+  .page-head { max-width:1280px; margin:0 auto 8px; text-align:center; }
+  .page-head h1 { font-family:'Plus Jakarta Sans'; font-size:32px; font-weight:800; letter-spacing:-.5px; }
+  .page-head p { color:#4B5563; margin-top:8px; font-size:15px; }
+
+  /* ---- filter bars ---- */
+  .filters { max-width:1280px; margin:24px auto 6px; }
+  .filter-row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; margin-bottom:10px; }
+  .filter-row .lab { font-size:12px; font-weight:700; color:#6B7280; text-transform:uppercase; letter-spacing:1px; margin-right:6px; }
+  .chip {
+    font-family:'Inter'; font-size:13px; font-weight:600; color:#374151;
+    background:#fff; border:1px solid #D1D5DB; border-radius:999px; padding:7px 14px; cursor:pointer;
+    transition:all .15s;
+  }
+  .chip:hover { border-color:#9CA3AF; }
+  .chip.active { background:#111827; color:#fff; border-color:#111827; }
+  .count { text-align:center; color:#6B7280; font-size:13px; margin:6px 0 24px; }
+
+  .grid { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:38px; }
+  @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+
+  .sample.hide { display:none; }
+  .tag { display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin-bottom:11px; padding:0 4px; }
+  .tag .num { font-family:'Plus Jakarta Sans'; font-weight:800; font-size:14px; background:#111827; color:#fff; width:25px; height:25px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+  .tag .ind { font-family:'Plus Jakarta Sans'; font-weight:700; font-size:15px; }
+  .tag .fam { color:#6B7280; font-size:12px; background:#fff; border:1px solid #E5E7EB; padding:2px 8px; border-radius:999px; margin-left:auto; }
+
+  /* ---- browser frame ---- */
+  .browser { border-radius:14px; overflow:hidden; box-shadow:0 20px 45px -20px rgba(0,0,0,.35),0 4px 12px rgba(0,0,0,.08); background:#fff; border:1px solid rgba(0,0,0,.06); }
+  .bar { background:#F1F3F5; height:36px; display:flex; align-items:center; padding:0 13px; gap:7px; border-bottom:1px solid rgba(0,0,0,.06); }
+  .bar i { width:10px; height:10px; border-radius:50%; display:block; }
+  .bar .r{background:#FF5F57;} .bar .y{background:#FEBC2E;} .bar .g{background:#28C840;}
+  .bar .url { margin-left:10px; flex:1; background:#fff; border-radius:6px; height:21px; font-size:11px; color:#9CA3AF; display:flex; align-items:center; padding:0 10px; }
+
+  /* ---- generic site (variable-driven) ---- */
+  .site { height:410px; overflow:hidden; padding:22px; background:var(--bg); color:var(--text); font-family:var(--bf); }
+  .site .nav { display:flex; align-items:center; justify-content:space-between; }
+  .site .logo { font-family:var(--hf); font-weight:700; font-size:17px; color:var(--brand); }
+  .site .nav-links { display:flex; gap:16px; font-size:12px; color:var(--muted); }
+  .site .navbtn { background:var(--btnbg); color:var(--btnfg); font-size:11px; padding:7px 14px; border-radius:8px; }
+  .site .hero { margin:30px 0 24px; }
+  .site .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:var(--accent); }
+  .site h1 { font-family:var(--hf); font-weight:700; font-size:30px; line-height:1.12; letter-spacing:-.4px; margin:10px 0; color:var(--hc,var(--text)); max-width:92%; }
+  .site .hero p { color:var(--muted); font-size:13px; max-width:82%; }
+  .site .cta { margin-top:16px; display:flex; gap:10px; align-items:center; }
+  .site .btn-primary { background:var(--btnbg); color:var(--btnfg); padding:11px 20px; border-radius:12px; font-size:13px; font-weight:600; }
+  .site .btn-ghost { color:var(--brand); padding:11px 14px; font-size:13px; }
+  .site .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .site .card { padding:13px; background:#fff; border-radius:12px; box-shadow:0 8px 22px -14px rgba(17,24,39,.25); }
+  .site .card .ic { width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:15px; margin-bottom:8px; background:rgba(0,0,0,.06); border-radius:9px; }
+  .site .card h4 { font-family:var(--hf); font-size:12px; font-weight:700; margin-bottom:3px; color:#111827; }
+  .site .card p { font-size:10.5px; line-height:1.4; color:#6B7280; }
+
+  /* ---- dark sites ---- */
+  .site.is-dark .card { background:rgba(255,255,255,.06); box-shadow:none; }
+  .site.is-dark .card h4 { color:#fff; }
+  .site.is-dark .card p { color:var(--muted); }
+  .site.is-dark .card .ic { background:rgba(255,255,255,.12); }
+
+  /* ================= VIBE: tech ================= */
+  .vibe-tech .btn-primary { border-radius:12px; box-shadow:0 10px 20px -8px var(--brand); }
+  .vibe-tech .btn-ghost { border:1px solid rgba(0,0,0,.1); border-radius:12px; }
+  .vibe-tech.is-dark .btn-ghost { border-color:rgba(255,255,255,.15); }
+
+  /* ================= VIBE: lux ================= */
+  .vibe-lux h1 { letter-spacing:0; }
+  .vibe-lux .navbtn { background:transparent; border:1px solid var(--accent); color:var(--accent); border-radius:2px; }
+  .vibe-lux .btn-primary { border-radius:2px; letter-spacing:.5px; padding:12px 24px; }
+  .vibe-lux .btn-ghost { color:var(--accent); border-bottom:1px solid var(--accent); border-radius:0; padding:11px 2px; }
+  .vibe-lux .cards { border-top:1px solid rgba(100,116,139,.25); padding-top:16px; }
+  .vibe-lux .card { background:transparent; box-shadow:none; border-left:1px solid rgba(100,116,139,.25); border-radius:0; padding:0 0 0 13px; }
+  .vibe-lux .card .ic { background:transparent; font-size:20px; margin-bottom:4px; }
+  .vibe-lux.is-dark .card h4 { color:#fff; }
+
+  /* ================= VIBE: organic ================= */
+  .vibe-organic .navbtn { border-radius:999px; }
+  .vibe-organic .btn-primary { border-radius:999px; padding:13px 24px; }
+  .vibe-organic .btn-ghost { border-radius:999px; }
+  .vibe-organic .card { border-radius:24px; }
+  .vibe-organic .card .ic { border-radius:999px; }
+
+  /* ================= VIBE: brutal ================= */
+  .vibe-brutal { }
+  .vibe-brutal h1 { text-transform:uppercase; letter-spacing:-1px; line-height:1.02; }
+  .vibe-brutal .navbtn { border-radius:0; border:2px solid currentColor; box-shadow:3px 3px 0 var(--text); }
+  .vibe-brutal .btn-primary { border-radius:0; border:2px solid var(--text); box-shadow:5px 5px 0 var(--text); font-weight:700; }
+  .vibe-brutal .card { border-radius:0; background:#fff; color:#000; border:2px solid #000; box-shadow:4px 4px 0 #000; }
+  .vibe-brutal .card h4 { color:#000; font-weight:800; text-transform:uppercase; }
+  .vibe-brutal .card p { color:#3F3F46; }
+  .vibe-brutal .card .ic { background:var(--accent); border:2px solid #000; border-radius:0; }
+
+  /* ================= VIBE: beauty ================= */
+  .vibe-beauty .btn-primary { border-radius:14px; box-shadow:0 8px 18px -8px var(--brand); }
+  .vibe-beauty .btn-ghost { border-radius:14px; border:1px solid rgba(0,0,0,.1); }
+  .vibe-beauty .card { border-radius:16px; box-shadow:0 8px 20px -14px rgba(0,0,0,.2); }
+  .vibe-beauty .card .ic { border-radius:12px; }
+
+  /* ================= VIBE: warm ================= */
+  .vibe-warm .btn-primary { border-radius:10px; box-shadow:0 8px 18px -12px var(--brand); }
+  .vibe-warm .btn-ghost { border-radius:10px; border:1px solid rgba(0,0,0,.12); }
+  .vibe-warm .card { border-radius:10px; }
+
+  /* ================= VIBE: clean ================= */
+  .vibe-clean .btn-primary { border-radius:8px; box-shadow:0 8px 18px -10px var(--brand); }
+  .vibe-clean .btn-ghost { border-radius:8px; border:1px solid #E2E8F0; }
+  .vibe-clean .card { border-radius:10px; box-shadow:0 6px 16px -12px rgba(0,0,0,.15); border:1px solid #EEF2F6; }
+
+  /* ================= VIBE: mini ================= */
+  .vibe-mini .navbtn { border-radius:0; }
+  .vibe-mini .btn-primary { border-radius:0; }
+  .vibe-mini .btn-ghost { border-radius:0; border:1px solid #E5E5E5; }
+  .vibe-mini .card { border-radius:0; box-shadow:none; border:1px solid #E5E5E5; }
+  .vibe-mini .card .ic { border-radius:0; }
+
+  .note { max-width:1280px; margin:44px auto 0; padding:22px 26px; background:#fff; border-radius:14px; box-shadow:0 10px 30px -18px rgba(0,0,0,.3); }
+  .note h3 { font-family:'Plus Jakarta Sans'; font-weight:800; margin-bottom:8px; }
+  .note ol { margin:8px 0 0 18px; } .note li { margin-bottom:5px; font-size:14px; }
+  .note code { background:#F3F4F6; padding:2px 6px; border-radius:5px; font-size:13px; }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <h1>Webový vzorkovník</h1>
+  <p>24 ukázek · 14 barevných palet · filtruj podle odvětví i podle stylu</p>
+</div>
+
+<div class="filters">
+  <div class="filter-row" id="groupFilter"><span class="lab">Odvětví</span></div>
+  <div class="filter-row" id="styleFilter"><span class="lab">Styl</span></div>
+</div>
+<div class="count" id="count"></div>
+
+<div class="grid" id="grid"></div>
+
+<div class="note">
+  <h3>Jak z toho udělat editovatelný vzorkovník ve Figmě</h3>
+  <ol>
+    <li>Ve Figmě nainstaluj zdarma plugin <code>html.to.design</code>.</li>
+    <li>Spusť ho a vlož <strong>tento HTML soubor</strong> (nebo odkaz, když web nahraješ online).</li>
+    <li>Převede každou ukázku na <strong>editovatelné vrstvy</strong> — texty, barvy i rozložení pak měníš myší.</li>
+    <li>U klienta: profiltruj podle jeho oboru → ukážeš pár stylů → vybere → ten mi pošleš a postavím web.</li>
+  </ol>
+</div>
+
+<script>
+/* ---------------- PALETY ---------------- */
+const P = {
+  'tech-indigo': {fam:'Moderní tech', vibe:'tech', dark:0, bg:'#F9FAFB', text:'#111827', muted:'#4B5563', brand:'#4F46E5', accent:'#06B6D4', hf:"'Plus Jakarta Sans'", bf:"'Inter'", btnbg:'linear-gradient(135deg,#4F46E5,#06B6D4)', btnfg:'#fff'},
+  'tech-dark':   {fam:'Moderní tech', vibe:'tech', dark:1, bg:'#0B0F19', text:'#F9FAFB', muted:'#9CA3AF', brand:'#818CF8', accent:'#06B6D4', hf:"'Plus Jakarta Sans'", bf:"'Inter'", btnbg:'linear-gradient(135deg,#4F46E5,#06B6D4)', btnfg:'#fff'},
+  'lux-navy':    {fam:'Prémiový', vibe:'lux', dark:0, bg:'#F8FAFC', text:'#0F172A', muted:'#64748B', brand:'#0F172A', accent:'#B45309', hf:"'Playfair Display'", bf:"'Lora'", btnbg:'#0F172A', btnfg:'#fff'},
+  'lux-dark':    {fam:'Prémiový', vibe:'lux', dark:1, bg:'#020617', text:'#E2E8F0', muted:'#94A3B8', brand:'#E2E8F0', accent:'#D4A24E', hf:"'Playfair Display'", bf:"'Lora'", btnbg:'#B45309', btnfg:'#fff'},
+  'organic':     {fam:'Organický', vibe:'organic', dark:0, bg:'#FDFBF7', text:'#1F2937', muted:'#4B5563', brand:'#14532D', accent:'#D97706', hc:'#14532D', hf:"'Fraunces'", bf:"'Outfit'", btnbg:'#14532D', btnfg:'#fff'},
+  'organic-dark':{fam:'Organický', vibe:'organic', dark:1, bg:'#14532D', text:'#FDFBF7', muted:'#D1FAE5', brand:'#FDFBF7', accent:'#FCD34D', hc:'#FDFBF7', hf:"'Fraunces'", bf:"'Outfit'", btnbg:'#D97706', btnfg:'#fff'},
+  'brutal':      {fam:'Kreativní', vibe:'brutal', dark:0, bg:'#FFFFFF', text:'#000000', muted:'#27272A', brand:'#EC4899', accent:'#F59E0B', hf:"'Syne'", bf:"'Space Mono'", btnbg:'#EC4899', btnfg:'#fff'},
+  'brutal-dark': {fam:'Kreativní', vibe:'brutal', dark:1, bg:'#18181B', text:'#FFFFFF', muted:'#D4D4D8', brand:'#F59E0B', accent:'#EC4899', hf:"'Syne'", bf:"'Space Mono'", btnbg:'#F59E0B', btnfg:'#000'},
+  'beauty':      {fam:'Beauty', vibe:'beauty', dark:0, bg:'#FDF2F4', text:'#3D2C2E', muted:'#8A6D70', brand:'#C08497', accent:'#B76E79', hc:'#3D2C2E', hf:"'Cormorant Garamond'", bf:"'Inter'", btnbg:'#C08497', btnfg:'#fff'},
+  'rose':        {fam:'Beauty', vibe:'beauty', dark:0, bg:'#FFFFFF', text:'#2B2B2B', muted:'#7A7A7A', brand:'#B76E79', accent:'#C99A9A', hf:"'Playfair Display'", bf:"'Outfit'", btnbg:'#B76E79', btnfg:'#fff'},
+  'warm':        {fam:'Warm / Gastro', vibe:'warm', dark:0, bg:'#FFF8F0', text:'#1A1A1A', muted:'#57534E', brand:'#B91C1C', accent:'#D97706', hf:"'Fraunces'", bf:"'Outfit'", btnbg:'#B91C1C', btnfg:'#fff'},
+  'clean':       {fam:'Clean / Medical', vibe:'clean', dark:0, bg:'#F8FAFC', text:'#0F172A', muted:'#64748B', brand:'#0EA5E9', accent:'#22C55E', hf:"'Plus Jakarta Sans'", bf:"'Inter'", btnbg:'#0EA5E9', btnfg:'#fff'},
+  'craft':       {fam:'Řemeslo', vibe:'warm', dark:0, bg:'#FAFAF9', text:'#1C1917', muted:'#57534E', brand:'#C2410C', accent:'#1C1917', hf:"'Space Grotesk'", bf:"'Inter'", btnbg:'#1C1917', btnfg:'#fff'},
+  'mini':        {fam:'Minimal', vibe:'mini', dark:0, bg:'#FFFFFF', text:'#111111', muted:'#777777', brand:'#111111', accent:'#111111', hf:"'Space Grotesk'", bf:"'Inter'", btnbg:'#111111', btnfg:'#fff'},
+};
+
+/* ---------------- UKÁZKY ---------------- */
+const S = [
+  {g:'Krása & péče', ind:'Kadeřnictví', pal:'beauty', brand:'Studio Vlas', url:'studio-vlas.cz', eye:'Vlasové studio', h1:'Vaše vlasy,<br>naše vášeň', p:'Střihy, barvení a péče od profesionálů. Rezervace online během chvilky.', c:[['✂️','Střihy','Dámské i pánské.'],['🎨','Barvení','Melír i balayage.'],['💆','Péče','Regenerace vlasů.']]},
+  {g:'Krása & péče', ind:'Kadeřnictví', pal:'rose', brand:'Coco Hair', url:'cocohair.cz', eye:'Hair & Beauty', h1:'Krása začíná<br>u vlasů', p:'Moderní salon v centru města. Přijďte za změnou, odejdete zářivá.', c:[['💈','Střih','Podle vašeho typu.'],['✨','Styling','Na každou akci.'],['💗','Ošetření','Zdravé vlasy.']]},
+  {g:'Krása & péče', ind:'Kosmetika', pal:'organic', brand:'Pleť & Klid', url:'plet-klid.cz', eye:'Kosmetický salon', h1:'Péče, kterou<br>vaše pleť pozná', p:'Ošetření s přírodní kosmetikou. Dopřejte pleti chvíli klidu.', c:[['✨','Pleť','Ošetření na míru.'],['💆','Masáže','Obličeje i těla.'],['🌸','Bio','Šetrné produkty.']]},
+  {g:'Krása & péče', ind:'Nehtové studio', pal:'rose', brand:'Nails by Ema', url:'nailsbyema.cz', eye:'Nail studio', h1:'Nehty jako<br>malé umění', p:'Gel lak, modeláž a nail art. Precizní práce, dlouhá výdrž.', c:[['💅','Modeláž','Gel i akryl.'],['🎨','Nail art','Na přání.'],['✨','Manikúra','Péče o ruce.']]},
+  {g:'Krása & péče', ind:'Psí salon', pal:'organic', brand:'Salon Lena', url:'salon-lena.cz', eye:'Úprava psů · Česká Lípa', h1:'Péče, po které<br>váš pes září', p:'Profesionální grooming s citem. Střih, koupel a péče o srst i drápky.', c:[['🐩','Střih','Podle plemene.'],['🛁','Koupel','Šetrná kosmetika.'],['🐾','Péče','Drápky a uši.']]},
+  {g:'Krása & péče', ind:'Psí salon', pal:'beauty', brand:'Hafík Grooming', url:'hafik-grooming.cz', eye:'Grooming salon', h1:'Mazlíček jako<br>ze salonu', p:'Láskyplná péče o psy i kočky. Bez stresu, s trpělivostí.', c:[['✂️','Úprava','Střih i trim.'],['🛁','Koupel','Voňavá a čistá.'],['❤️','Klid','Bez stresu.']]},
+
+  {g:'Gastro', ind:'Kavárna', pal:'brutal-dark', brand:'ROŠT', url:'kavarna-rost.cz', eye:'// Specialty coffee', h1:'Káva, co<br>probudí', p:'Vlastní pražírna v centru. Poctivá zrna, žádné kompromisy.', c:[['☕','Espresso','Denně čerstvé.'],['🔥','Pražírna','Zrna z farem.'],['🥐','Snídaně','Domácí pečivo.']]},
+  {g:'Gastro', ind:'Restaurace', pal:'warm', brand:'Bistro Kořen', url:'bistro-koren.cz', eye:'Sezónní kuchyně', h1:'Chutě, které<br>si pamatujete', p:'Vaříme z lokálních surovin. Menu se mění podle sezóny.', c:[['🍽️','Menu','Denně čerstvé.'],['🌿','Lokální','Od farmářů.'],['🍷','Vína','Pečlivý výběr.']]},
+  {g:'Gastro', ind:'Pekárna', pal:'warm', brand:'PEC', url:'pekarna-pec.cz', eye:'Řemeslná pekárna', h1:'Pečeme<br>od svítání', p:'Kváskový chléb a poctivé pečivo z lokální mouky. Každé ráno čerstvé.', c:[['🥖','Kvásek','24h kynutí.'],['🌾','Mouka','Z lokálního mlýna.'],['🥐','Sladké','Máslové croissanty.']]},
+
+  {g:'Kreativa', ind:'Fotograf', pal:'brutal', brand:'KLÁRA©', url:'studioklara.cz', eye:'// Fotografka', h1:'Zachytím<br>váš příběh', p:'Portréty, svatby a značky s odvahou. Žádné strojené pózy.', c:[['📷','Portréty','Osobní i firemní.'],['💍','Svatby','Celý den s vámi.'],['🎨','Značky','Vizuál pro byznys.']]},
+  {g:'Kreativa', ind:'Fotograf', pal:'lux-dark', brand:'NOIR Studio', url:'noir-studio.cz', eye:'Portrét & móda', h1:'Světlo, stín,<br>okamžik', p:'Elegantní portrétní a módní fotografie. Ateliér v centru Prahy.', c:[['📷','Portrét','Ateliér i exteriér.'],['🎞️','Móda','Lookbooky.'],['🖤','Editorial','Pro magazíny.']]},
+
+  {g:'Byznys', ind:'Advokát', pal:'lux-navy', brand:'Havlíková & Partneři', url:'havlikova-pravo.cz', eye:'Advokátní kancelář · Praha', h1:'Právní jistota,<br>na kterou se spolehnete', p:'Diskrétní poradenství pro firmy i jednotlivce. 20 let zkušeností.', c:[['§','Obchodní','Smlouvy a spory.'],['⚖','Zastoupení','Před soudy.'],['🏛','Reality','Převody, due diligence.']]},
+  {g:'Byznys', ind:'Účetní', pal:'clean', brand:'Fér Účto', url:'fer-ucto.cz', eye:'Účetnictví & daně', h1:'Čísla, která<br>sedí', p:'Vedeme účetnictví, hlídáme termíny a poradíme s daněmi. Bez stresu.', c:[['📊','Účetnictví','Kompletní vedení.'],['🧾','Daně','Přiznání i optimalizace.'],['🤝','Poradenství','Osobní přístup.']]},
+  {g:'Byznys', ind:'Reality', pal:'lux-navy', brand:'DOMUS Reality', url:'domus-reality.cz', eye:'Realitní kancelář', h1:'Najdeme vám<br>domov', p:'Prodej a pronájem nemovitostí s férovým přístupem. Znáte cenu předem.', c:[['🏡','Prodej','Kompletní servis.'],['🔑','Pronájem','Prověření nájemci.'],['📈','Odhad','Cena zdarma.']]},
+
+  {g:'Zdraví & sport', ind:'Fitness', pal:'brutal-dark', brand:'IRON', url:'iron-gym.cz', eye:'// Gym & coaching', h1:'Trénuj<br>tvrdě', p:'Moderní posilovna a osobní tréninky. Výsledky, ne výmluvy.', c:[['🏋️','Vybavení','Špičkové stroje.'],['🔥','Tréninky','S trenérem.'],['📈','Plány','Na míru cíli.']]},
+  {g:'Zdraví & sport', ind:'Jóga & wellness', pal:'organic', brand:'KLID', url:'studio-klid.cz', eye:'Jóga studio', h1:'Najděte svůj<br>klid', p:'Lekce jógy pro všechny úrovně. Nadechněte se a zpomalte.', c:[['🧘','Lekce','Pro začátečníky i pokročilé.'],['🌿','Atmosféra','Klidný prostor.'],['💆','Relaxace','Meditace a dech.']]},
+  {g:'Zdraví & sport', ind:'Zubní ordinace', pal:'clean', brand:'DentClinic', url:'dentclinic.cz', eye:'Zubní ordinace', h1:'Úsměv,<br>na který se těšíte', p:'Moderní stomatologie bez bolesti. Bereme nové pacienty.', c:[['🦷','Prevence','Pravidelné prohlídky.'],['✨','Estetika','Bělení, fazety.'],['🩺','Implantáty','Náhrada zubů.']]},
+  {g:'Zdraví & sport', ind:'Fyzioterapie', pal:'clean', brand:'ReMove', url:'remove-fyzio.cz', eye:'Fyzioterapie', h1:'Zpět<br>bez bolesti', p:'Individuální fyzioterapie a rehabilitace. Vrátíme vás do pohybu.', c:[['🤸','Terapie','Manuální techniky.'],['💪','Cvičení','Plán na doma.'],['🩺','Diagnostika','Najdeme příčinu.']]},
+
+  {g:'Tech', ind:'SaaS / aplikace', pal:'tech-indigo', brand:'NovaFlow', url:'novaflow.io', eye:'Automatizace bez kódu', h1:'Propojte své nástroje<br>za pár minut', p:'Napojte aplikace, nastavte workflow a nechte to běžet automaticky.', c:[['⚡','Rychlé','Spustíte za 5 min.'],['🔗','Integrace','200+ aplikací.'],['🔒','Bezpečné','Šifrování dat.']]},
+  {g:'Tech', ind:'Krypto / fintech', pal:'tech-dark', brand:'CoinPulse', url:'coinpulse.app', eye:'Krypto v reálném čase', h1:'Obchodujte chytře,<br>ne rychle', p:'Sledujte trh, spravujte portfolio a nastavte upozornění na jednom místě.', c:[['📈','Live data','Kurzy naživo.'],['🔔','Alerty','Cenová hlídka.'],['🛡️','Ochrana','2FA & cold storage.']]},
+
+  {g:'Řemeslo & lokál', ind:'Truhlářství', pal:'craft', brand:'Dřevo & Ruka', url:'drevoaruka.cz', eye:'Truhlářství na míru', h1:'Nábytek<br>s příběhem', p:'Kuchyně, vestavěné skříně a nábytek na míru z masivu. Ruční práce.', c:[['🪵','Masiv','Poctivé dřevo.'],['🔨','Na míru','Přesně do prostoru.'],['📐','Návrh','3D vizualizace.']]},
+  {g:'Řemeslo & lokál', ind:'Autoservis', pal:'mini', brand:'AutoMax', url:'automax-servis.cz', eye:'Autoservis', h1:'Postaráme se<br>o vaše auto', p:'Servis všech značek, STK a pneuservis. Férové ceny, rychlé termíny.', c:[['🔧','Servis','Všechny značky.'],['🛞','Pneu','Přezutí i uskladnění.'],['⚙️','Diagnostika','Přesně a rychle.']]},
+
+  {g:'Ubytování', ind:'Hotel', pal:'lux-dark', brand:'GRAND LUMIÈRE', url:'grandlumiere.com', eye:'★★★★★ · Karlovy Vary', h1:'Kde luxus potkává<br>klidný čas', p:'Nadčasová elegance v srdci lázní. Privátní spa a služby na míru.', c:[['🛏','Suity','42 pokojů.'],['🍷','Gastronomie','Michelin.'],['🌿','Wellness','Privátní lázně.']]},
+
+  {g:'E-shop', ind:'Bio e-shop', pal:'organic-dark', brand:'Kořínek', url:'korinek-bio.cz', eye:'Od farmáře k vám', h1:'Poctivé bio<br>bez kompromisů', p:'Sezónní ovoce, zelenina a produkty od lokálních farmářů. Doručíme domů.', c:[['🥕','Sezónní','Vždy čerstvé.'],['🚚','Rozvoz','Do 24 hodin.'],['♻️','Bez obalů','Vratné bedýnky.']]},
+];
+
+/* ---------------- RENDER ---------------- */
+function styleVars(p){
+  let s = `--bg:${p.bg};--text:${p.text};--muted:${p.muted};--brand:${p.brand};--accent:${p.accent};--hf:${p.hf};--bf:${p.bf};--btnbg:${p.btnbg};--btnfg:${p.btnfg};`;
+  if(p.hc) s += `--hc:${p.hc};`;
+  return s;
+}
+function cardHTML(c){ return `<div class="card"><div class="ic">${c[0]}</div><h4>${c[1]}</h4><p>${c[2]}</p></div>`; }
+
+function render(list){
+  const grid = document.getElementById('grid');
+  grid.innerHTML = list.map((s,i)=>{
+    const p = P[s.pal];
+    const cls = `site vibe-${p.vibe}${p.dark?' is-dark':''}`;
+    return `<figure class="sample">
+      <div class="tag"><span class="num">${s._n}</span><span class="ind">${s.ind}</span><span class="fam">${p.fam}</span></div>
+      <div class="browser">
+        <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="url">${s.url}</span></div>
+        <div class="${cls}" style="${styleVars(p)}">
+          <div class="nav"><span class="logo">${s.brand}</span><span class="nav-links"><span>Služby</span><span>Ceník</span><span>Kontakt</span></span><span class="navbtn">Objednat</span></div>
+          <div class="hero">
+            <div class="eyebrow">${s.eye}</div>
+            <h1>${s.h1}</h1>
+            <p>${s.p}</p>
+            <div class="cta"><a class="btn-primary">Rezervovat</a><a class="btn-ghost">Více ▸</a></div>
+          </div>
+          <div class="cards">${s.c.map(cardHTML).join('')}</div>
+        </div>
+      </div>
+    </figure>`;
+  }).join('');
+}
+
+/* ---------------- FILTRY ---------------- */
+S.forEach((s,i)=> s._n = i+1);
+let fGroup='Vše', fStyle='Vše';
+const groups = ['Vše', ...new Set(S.map(s=>s.g))];
+const styles = ['Vše', ...new Set(S.map(s=>P[s.pal].fam))];
+
+function buildChips(containerId, items, getActive, setActive){
+  const c = document.getElementById(containerId);
+  items.forEach(it=>{
+    const b = document.createElement('button');
+    b.className = 'chip' + (getActive()===it?' active':'');
+    b.textContent = it;
+    b.onclick = ()=>{ setActive(it); refresh(); };
+    c.appendChild(b);
+  });
+}
+function refresh(){
+  document.querySelectorAll('#groupFilter .chip').forEach(b=> b.classList.toggle('active', b.textContent===fGroup));
+  document.querySelectorAll('#styleFilter .chip').forEach(b=> b.classList.toggle('active', b.textContent===fStyle));
+  const list = S.filter(s=> (fGroup==='Vše'||s.g===fGroup) && (fStyle==='Vše'||P[s.pal].fam===fStyle));
+  render(list);
+  document.getElementById('count').textContent = `Zobrazeno ${list.length} z ${S.length} ukázek`;
+}
+buildChips('groupFilter', groups, ()=>fGroup, v=>fGroup=v);
+buildChips('styleFilter', styles, ()=>fStyle, v=>fStyle=v);
+refresh();
+</script>
+
+</body>
+</html>
