@@ -1638,16 +1638,44 @@ section[id],
    FOOTER
    ============================================================ */
 .footer {
+  position: relative;
   background: var(--brown-deep);
   color: rgba(255,255,255,.8);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Velký prosvítající wordmark v pozadí */
+.footer::before {
+  content: 'Salon Lena';
+  position: absolute;
+  left: 50%;
+  bottom: -0.06em;
+  transform: translateX(-50%);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(84px, 17vw, 260px);
+  line-height: .82;
+  white-space: nowrap;
+  letter-spacing: .01em;
+  background: linear-gradient(180deg, rgba(212,172,103,.16) 0%, rgba(212,172,103,.03) 55%, rgba(212,172,103,0) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
 }
 
 .footer__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--space-xl);
   padding-top: var(--space-xl);
-  padding-bottom: var(--space-xl);
+  padding-bottom: calc(var(--space-xl) + 40px);
 }
 
 .footer__logo-name {
@@ -1717,6 +1745,8 @@ section[id],
 .footer__contact a:hover { color: var(--white); }
 
 .footer__bottom {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid rgba(255,255,255,.08);
   padding: var(--space-md) 0;
   font-size: 13px;
