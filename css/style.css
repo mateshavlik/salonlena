@@ -186,6 +186,73 @@ section[id],
   object-position: center top;
 }
 
+/* ---- O SALONU: bohatší prezentace fotky majitelky ---- */
+#o-salonu .split__visual--quote { position: relative; z-index: 0; }
+
+/* Dekorativní zlatý rámeček, který vykukuje za fotkou (levý horní roh) */
+#o-salonu .split__visual--quote::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  width: 60%;
+  height: 55%;
+  border: 2px solid var(--gold-light);
+  border-radius: var(--radius-xl);
+  opacity: .55;
+  z-index: -1;
+}
+
+#o-salonu .split__img-wrap {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 30px 60px rgba(44,26,14,.28);
+}
+
+#o-salonu .split__img {
+  height: 560px;
+  object-position: center 24%;
+  transition: transform 1s var(--ease);
+}
+
+#o-salonu .split__img-wrap:hover .split__img {
+  transform: scale(1.05);
+}
+
+/* Jemný spodní přechod pro hloubku (pod citátem) */
+#o-salonu .split__img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,14,.35) 0%, transparent 42%);
+  pointer-events: none;
+}
+
+/* ---- O SALONU: text se načítá postupně (staggered reveal) ---- */
+/* Rodič neanimujeme jako blok — necháme animovat jednotlivé prvky */
+#o-salonu .split__copy[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+#o-salonu .split__copy > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+
+#o-salonu .split__copy.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#o-salonu .split__copy.is-visible > *:nth-child(1) { transition-delay: .08s; }
+#o-salonu .split__copy.is-visible > *:nth-child(2) { transition-delay: .20s; }
+#o-salonu .split__copy.is-visible > *:nth-child(3) { transition-delay: .32s; }
+#o-salonu .split__copy.is-visible > *:nth-child(4) { transition-delay: .44s; }
+#o-salonu .split__copy.is-visible > *:nth-child(5) { transition-delay: .56s; }
+#o-salonu .split__copy.is-visible > *:nth-child(6) { transition-delay: .68s; }
+
 .split__img--rounded {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
@@ -621,9 +688,24 @@ section[id],
   justify-content: center;
   margin-bottom: var(--space-md);
   color: var(--brown-warm);
+  transition: transform .45s var(--ease-bounce), color .3s var(--ease);
 }
 
-.feature__icon svg { width: 34px; height: 34px; }
+.feature__icon svg {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 4px 6px rgba(122,79,50,.20));
+  transition: filter .35s var(--ease);
+}
+
+.feature:hover .feature__icon {
+  transform: translateY(-5px) scale(1.14);
+  color: var(--gold);
+}
+
+.feature:hover .feature__icon svg {
+  filter: drop-shadow(0 9px 14px rgba(184,137,61,.42));
+}
 
 .feature h3 {
   font-size: 17px;
@@ -708,9 +790,24 @@ section[id],
   justify-content: center;
   color: var(--brown-warm);
   margin-bottom: 14px;
+  transition: transform .45s var(--ease-bounce), color .3s var(--ease);
 }
 
-.service-card__icon svg { width: 30px; height: 30px; }
+.service-card__icon svg {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 3px 5px rgba(122,79,50,.18));
+  transition: filter .35s var(--ease);
+}
+
+.service-card:hover .service-card__icon {
+  transform: scale(1.16) rotate(-6deg);
+  color: var(--gold);
+}
+
+.service-card:hover .service-card__icon svg {
+  filter: drop-shadow(0 7px 11px rgba(184,137,61,.38));
+}
 
 .service-card h3 {
   font-size: 16.5px;
@@ -770,18 +867,54 @@ section[id],
 }
 
 .pricing-col {
-  background: var(--white);
+  position: relative;
+  background: linear-gradient(180deg, var(--white), var(--beige-cream));
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
+  overflow: hidden;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
 }
 
+/* Horní zlatý akcent — vyjede při hoveru */
+.pricing-col::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--brown-warm));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .55s var(--ease);
+}
+
+.pricing-col:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--beige-dark);
+}
+
+.pricing-col:hover::before { transform: scaleX(1); }
+
 .pricing-col__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 20px;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   padding-bottom: var(--space-md);
   border-bottom: 1px solid var(--border);
   color: var(--brown-deep);
+}
+
+/* Svislý zlatý proužek před nadpisem sloupce */
+.pricing-col__title::before {
+  content: '';
+  width: 4px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: linear-gradient(var(--gold-light), var(--brown-warm));
 }
 
 .price-list {
@@ -795,21 +928,41 @@ section[id],
   justify-content: space-between;
   align-items: center;
   gap: var(--space-sm);
-  padding: 13px 0;
+  padding: 12px 10px;
   border-bottom: 1px solid var(--beige-mid);
   font-size: 14.5px;
+  border-radius: 8px;
+  transition: background .28s var(--ease), transform .28s var(--ease);
 }
 
 .price-item:last-child { border-bottom: none; }
 
-.price-item__name { color: var(--text-secondary); flex: 1; }
+.price-item:hover {
+  background: rgba(184,137,61,.09);
+  transform: translateX(4px);
+}
+
+.price-item__name {
+  color: var(--text-secondary);
+  flex: 1;
+  transition: color .28s var(--ease);
+}
+
+.price-item:hover .price-item__name { color: var(--brown-dark); }
 
 .price-item__price {
+  display: inline-block;
   font-family: var(--font-head);
   font-weight: 600;
   font-size: 17px;
   color: var(--brown-dark);
   white-space: nowrap;
+  transition: color .28s var(--ease), transform .28s var(--ease-bounce);
+}
+
+.price-item:hover .price-item__price {
+  color: var(--gold);
+  transform: scale(1.08);
 }
 
 .price-item--note .price-item__price {
@@ -921,6 +1074,16 @@ section[id],
   background: var(--beige-light);
 }
 
+.info-box {
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+}
+
+.info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--beige-dark);
+}
+
 .info-box--warn {
   border-color: rgba(184,137,61,.35);
   background: var(--beige-light);
@@ -934,9 +1097,18 @@ section[id],
   align-items: center;
   justify-content: center;
   color: var(--gold);
+  transition: transform .4s var(--ease-bounce);
 }
 
-.info-box__icon svg { width: 26px; height: 26px; }
+.info-box__icon svg {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 3px 5px rgba(184,137,61,.22));
+}
+
+.info-box:hover .info-box__icon {
+  transform: scale(1.14) rotate(-5deg);
+}
 
 .info-box h4 {
   font-size: 15.5px;
@@ -1270,9 +1442,19 @@ section[id],
   justify-content: center;
   color: var(--brown-warm);
   margin-top: 2px;
+  transition: transform .4s var(--ease-bounce), color .3s var(--ease);
 }
 
-.contact-item__icon svg { width: 26px; height: 26px; }
+.contact-item__icon svg {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 3px 5px rgba(122,79,50,.18));
+}
+
+.contact-item:hover .contact-item__icon {
+  transform: scale(1.15) translateY(-2px);
+  color: var(--gold);
+}
 
 .contact-item strong {
   display: block;
@@ -1744,6 +1926,8 @@ section[id],
   #o-salonu .split__visual--quote {
     position: relative;
   }
+
+  #o-salonu .split__visual--quote::before { display: none; }  /* dekor. rámeček jen na desktopu */
 
   #o-salonu .split__img-wrap {
     width: min(380px, 100%);
