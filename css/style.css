@@ -554,8 +554,14 @@ section[id],
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
+  display: block;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: opacity .2s var(--ease);
 }
+
+.hero__scroll-hint:hover { opacity: .7; }
 
 .hero__scroll-hint span {
   display: block;
